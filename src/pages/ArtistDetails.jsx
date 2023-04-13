@@ -23,11 +23,11 @@ const ArtistDetails = () => {
     <div className="flex flex-col mt-4">
       <DetailsHeader
         artistId={artistId}
-        artistData={artistData}
+        artistData={artistData?.data[0]}
       ></DetailsHeader>
 
       <RelatedSongs
-        data={Object.values(artistData?.songs)}
+        data={artistData?.data[0].views['top-songs']?.data}
         artistId={artistId}
         isPlaying={isPlaying}
         activeSong={activeSong}
