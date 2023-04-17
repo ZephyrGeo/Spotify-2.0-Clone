@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
@@ -17,14 +16,14 @@ const CountryTracks = () => {
       .get(
         'https://geo.ipify.org/api/v2/country?apiKey=at_bjLr9ITeauDxExVs9vVutodyOMhyq',
       )
-      .then((res) => setCountry(res?.data?.location?.country))
+      .then((res) => setCountry(res?.data?.location.country))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, [country]);
 
   if (isFetching && loading) return <Loader title="Loading songs around you" />;
 
-  if (error && country) return <Error />;
+  if (error && country !== '') return <Error />;
 
   return (
     <div className="flex flex-col">
