@@ -3,6 +3,9 @@
 Develop an elegant React.js Music Application. 
 
 
+## Demo
+
+You can see the demo [here](https://zep-lyriks-app.netlify.app).
 
 ## Setup
 
